@@ -48,12 +48,13 @@ class MenuItemCrudController extends CrudController
                 'attribute' => 'name',
                 'model' => "\Backpack\MenuCRUD\app\Models\MenuItem",
             ]);
-            $this->crud->addField([
-                'name' => ['type', 'link', 'page_id'],
-                'label' => 'Type',
-                'type' => 'page_or_link',
-                'page_model' => '\Backpack\PageManager\app\Models\Page',
-            ]);
+            // $this->crud->addField([
+            //     'name' => ['type', 'link', 'page_id', 'trip_id'],
+            //     'label' => 'Type',
+            //     'type' => 'page_or_link_or_trip_slug',
+            //     'page_model' => '\Backpack\PageManager\app\Models\Page',
+            //     'trip_model' => 'App\Models\Trip',
+            // ]);
         });
     }
 }

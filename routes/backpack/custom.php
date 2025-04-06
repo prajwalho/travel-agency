@@ -16,4 +16,23 @@ Route::group([
     ),
     'namespace'  => 'App\Http\Controllers\Admin',
 ], function () { // custom admin routes
+    // Route::crud('activity-preference', 'ActivityPreferenceCrudController');
+    // Route::crud('article', 'ArticleCrudController');
+    // Route::crud('booking', 'BookingCrudController');
+    Route::crud('country', 'CountryCrudController');
+    // Route::crud('customize-trip', 'CustomizeTripCrudController');
+    // Route::crud('destination', 'DestinationCrudController');
+    // Route::crud('email-subscription', 'EmailSubscriptionCrudController');
+    // Route::crud('equipment', 'EquipmentCrudController');
+    // Route::crud('faq', 'FaqCrudController');
+    // Route::crud('faq-category', 'FaqCategoryCrudController');
+    // Route::crud('home-faq', 'HomeFaqCrudController');
+    Route::crud('icon', 'IconCrudController');
+    Route::crud('slider', 'SliderCrudController');
+    // Route::crud('tag', 'TagCrudController');
+    // Route::crud('team-member', 'TeamMemberCrudController');
+    // Route::crud('team-member-category', 'TeamMemberCategoryCrudController');
+    // Route::crud('testimonial', 'TestimonialCrudController');
+    // Route::crud('trip', 'TripCrudController');
+
 }); // this should be the absolute last line of this file

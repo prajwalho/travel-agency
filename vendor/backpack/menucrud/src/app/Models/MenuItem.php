@@ -2,6 +2,7 @@
 
 namespace Backpack\MenuCRUD\app\Models;
 
+use App\Models\Trip;
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Model;
 
@@ -10,7 +11,7 @@ class MenuItem extends Model
     use CrudTrait;
 
     protected $table = 'menu_items';
-    protected $fillable = ['name', 'type', 'link', 'page_id', 'parent_id'];
+    protected $fillable = ['name', 'type', 'link', 'page_id', 'trip_id', 'parent_id'];
 
     public function parent()
     {
@@ -25,6 +26,11 @@ class MenuItem extends Model
     public function page()
     {
         return $this->belongsTo('Backpack\PageManager\app\Models\Page', 'page_id');
+    }
+
+    public function trip()
+    {
+        return $this->belongsTo(Trip::class, 'trip_id');
     }
 
     /**
@@ -64,6 +70,12 @@ class MenuItem extends Model
 
             case 'internal_link':
                 return is_null($this->link) ? '#' : url($this->link);
+                break;
+
+            case 'trip_slug':
+                if($this->trip){
+                    return route('trips.show', $this->trip->slug);
+                }
                 break;
 
             default: //page_link

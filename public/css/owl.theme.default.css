@@ -1,0 +1,53 @@
+
+.owl-theme .owl-nav [class*='owl-'] {
+  color: #fff;
+  font-size: 12px;
+  margin: 3px;
+  padding:0;
+  background: transparent;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.owl-theme .owl-nav [class*='owl-']:hover {
+  background: transparent;
+  text-decoration: none;
+}
+
+.owl-theme .owl-nav .disabled {
+  opacity: 1;
+  cursor: default;
+}
+
+.owl-theme .owl-nav.disabled+.owl-dots {
+  margin-top: 20px;
+}
+
+.owl-theme .owl-dots {
+  text-align: center;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.owl-theme .owl-dots .owl-dot {
+  display: inline-block;
+  background: none;
+  outline: none;
+  border: none;
+  zoom: 1;
+}
+
+.owl-theme .owl-dots .owl-dot span {
+  width: 8px;
+  height: 8px;
+  margin: 0;
+  background: #D9D9D9;
+  display: block;
+  transition: opacity 200ms ease;
+  border-radius: 30px;
+}
+
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span {
+  background: #d4a418;
+}

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class ChangeExtrasToLongtext extends Migration
+class CreateIconsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,11 @@ class ChangeExtrasToLongtext extends Migration
      */
     public function up()
     {
-        Schema::table('pages', function (Blueprint $table) {
-            $table->longText('extras')->change();
+        Schema::create('icons', function (Blueprint $table) {
+            $table->increments('id');
+            $table->text('name');
+            $table->text('icon');
+            $table->timestamps();
         });
     }
 
@@ -25,8 +28,6 @@ class ChangeExtrasToLongtext extends Migration
      */
     public function down()
     {
-        Schema::table('pages', function (Blueprint $table) {
-            $table->text('extras')->change();
-        });
+        Schema::dropIfExists('icons');
     }
 }

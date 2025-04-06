@@ -40,6 +40,16 @@ class PageCrudController extends CrudController
             'label' => trans('backpack::pagemanager.slug'),
         ]);
         $this->crud->addButtonFromModelFunction('line', 'open', 'getOpenButton', 'beginning');
+
+        $this->crud->addFilter([ // select2 filter
+            'name' => 'template',
+            'type' => 'select2',
+            'label' => 'Template',
+        ], function () {
+            return $this->getTemplatesArray();
+        }, function ($value) { // if the filter is active
+            $this->crud->addClause('where', 'template', $value);
+        });
     }
 
     // -----------------------------------------------

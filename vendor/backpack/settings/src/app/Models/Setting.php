@@ -10,7 +10,15 @@ class Setting extends Model
 {
     use CrudTrait;
 
-    protected $fillable = ['value'];
+    protected $fillable = [
+        'name',
+        'key',
+        'value',
+        'description',
+        'field',
+        'active'
+    ];
+    // protected $fillable = ['value'];
 
     public function __construct(array $attributes = [])
     {
@@ -26,13 +34,13 @@ class Setting extends Model
      *
      * @return string The setting value.
      */
-    public static function get($key, $default = null)
+    public static function get($key)
     {
         $setting = new self();
         $entry = $setting->where('key', $key)->first();
 
         if (!$entry) {
-            return $default;
+            return;
         }
 
         return $entry->value;
