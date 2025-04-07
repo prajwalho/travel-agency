@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreatePagesTable extends Migration
 {
@@ -20,7 +21,7 @@ class CreatePagesTable extends Migration
             $table->string('title');
             $table->string('slug');
             $table->text('content')->nullable();
-            $table->text('extras')->nullable();
+            $table->longText('extras')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

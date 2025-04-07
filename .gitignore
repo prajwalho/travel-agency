@@ -1,1 +1,4 @@
 node_modules
+/public/uploads
+vendor/composer/autoload_classmap.php
+/vendor/_laravel_ide
